@@ -1,2 +1,2 @@
-# jcbcrouch.hithub.io
+# jcbcrouch.github.io
 My personal website.
