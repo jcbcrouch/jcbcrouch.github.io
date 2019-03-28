@@ -17,6 +17,10 @@ body {
   margin: 0;
   background-color: lightblue;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 h5 {
     color: darkblue;
 }
@@ -26,6 +30,11 @@ h5 {
   padding: 20px;
   text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* Style the top navigation bar */
 .topnav {
   overflow: hidden;
@@ -40,14 +49,27 @@ h5 {
   padding: 14px 85px;
   text-decoration: none;
 }
+<<<<<<< HEAD
 .topnav .icon {
   display: none;
 }
+=======
+
+.topnav .icon {
+  display: none;
+}
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* Change color on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 .audioplayer {
     width: 470px;
     height: 60px;
@@ -55,6 +77,7 @@ h5 {
     border: solid;
     float: left;
     position: relative;
+<<<<<<< HEAD
 }
  
 .playbutton {
@@ -85,6 +108,43 @@ h5 {
     border-radius: 15px;
     background: rgba(0, 0, 0, .3);
 }
+=======
+}
+ 
+.playbutton {
+    font-family: FontAwesome;
+    height: 60px;
+    width: 60px;
+    border: none;
+    float: left;
+    outline: none;
+}
+
+.play {
+    background: url("icons8-musical-80.png")
+}
+
+.pause {
+    background: url("iconfinder_pause_326574.png");
+}
+
+.play,
+.pause {
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.timeline {
+    width: 400px;
+    height: 20px;
+    margin-top: 20px;
+    float: left;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, .3);
+}
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 .playhead {
     width: 18px;
     height: 18px;
@@ -100,6 +160,10 @@ h5 {
   width: 600px;
   margin-left: 25%;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -107,6 +171,10 @@ h5 {
     display: block;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -120,6 +188,10 @@ h5 {
     text-align: left;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 </style>
 </head>
 <body>
@@ -138,6 +210,7 @@ h5 {
  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
  <i class="fa fa-bars"></i>
  </a>
+<<<<<<< HEAD
 </div>
 
 
@@ -159,6 +232,29 @@ function myFunction() {
     </div>
     <div id="audio-players"></div>
 </div>
+=======
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<div class="container">
+    <div>
+    <br>
+        <p>All of the music on this page was made by me using GarageBand!
+        I've listed the following tracks in my favorite order. All these tracks and a few more are on my soundcloud, but I believe they will sound better here because of the increased bitrate as soundcloud lowered their bitrate from 128 kbps to 64 kbps.</p>
+    </div>
+    <div id="audio-players"></div>
+</div>
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
   
 <script>
 // Event listener for DOM
@@ -171,11 +267,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // Generate HTML for audio elements and audio players
     createAudioElements();
     createAudioPlayers();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
     // Populate Audio List
     populateAudioList();
     populateComponentDictionary();
 });
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 // array of audio files (stored in a folder called music)
 var files = ["SafePassage.m4a",
             "TheRiver'sTwin.m4a",
@@ -191,9 +295,17 @@ var files = ["SafePassage.m4a",
             "WindCarries.m4a", // 2
             "Hero'sTriumphUnfinished.m4a" // 3
             ];
+<<<<<<< HEAD
 ///////////////////////////////////////////////
 // Find and store audio info
 ///////////////////////////////////////////////
+=======
+
+///////////////////////////////////////////////
+// Find and store audio info
+///////////////////////////////////////////////
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 // array for AudioObjects
 var audioList = [];
 // components and the index for their AudioObject
@@ -202,6 +314,10 @@ var componentDict = {};
 var playingAudio = null;
 // store playhead id if one is being dragged
 var onplayhead = null;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* AudioObject Constructor */
 function AudioObject(audio, duration) {
     this.audio = audio;
@@ -219,6 +335,10 @@ AudioObject.prototype.bindAudioPlayer = function (num) {
     this.playhead = document.getElementById("playhead-" + num);
     this.timelineWidth = this.timeline.offsetWidth - this.playhead.offsetWidth
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* addEventListeners() */
 AudioObject.prototype.addEventListeners = function () {
     this.audio.addEventListener("timeupdate", AudioObject.prototype.timeUpdate, false);
@@ -229,6 +349,10 @@ AudioObject.prototype.addEventListeners = function () {
     this.playhead.addEventListener('mousedown', AudioObject.prototype.mouseDown, false);
     window.addEventListener('mouseup', mouseUp, false);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* populateAudioList */
 function populateAudioList() {
     var audioElements = document.getElementsByClassName("audio");
@@ -240,6 +364,10 @@ function populateAudioList() {
         audioList[i].addEventListeners();
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* populateComponentDictionary() 
  * {key=element id : value=index of audioList} */
 function populateComponentDictionary() {
@@ -250,15 +378,27 @@ function populateComponentDictionary() {
         componentDict[audioList[i].playhead.id] = i;
     }
 }
+<<<<<<< HEAD
 ///////////////////////////////////////////////
 // Update Audio Player
 ///////////////////////////////////////////////
+=======
+
+///////////////////////////////////////////////
+// Update Audio Player
+///////////////////////////////////////////////
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* durationChange
  * set duration for AudioObject */
 AudioObject.prototype.durationChange = function () {
     var ao = audioList[getAudioListIndex(this.id)];
     ao.duration = this.duration;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* pressPlay() 
  * call play() for correct AudioObject
  */
@@ -266,6 +406,10 @@ AudioObject.prototype.pressPlay = function () {
     var index = getAudioListIndex(this.id);
     audioList[index].play();
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* play() 
  * play or pause selected audio, if there is a song playing pause it
  */
@@ -286,6 +430,10 @@ AudioObject.prototype.play = function () {
         changeClass(this.playbutton, "playbutton pause");
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* timelineClick()
  * get timeline's AudioObject
  */
@@ -293,6 +441,10 @@ AudioObject.prototype.timelineClick = function (event) {
     var ao = audioList[getAudioListIndex(this.id)];
     ao.audio.currentTime = ao.audio.duration * clickPercent(event, ao.timeline, ao.timelineWidth);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* mouseDown */
 AudioObject.prototype.mouseDown = function (event) {
     onplayhead = this.id;
@@ -300,6 +452,10 @@ AudioObject.prototype.mouseDown = function (event) {
     window.addEventListener('mousemove', AudioObject.prototype.moveplayhead, true);
     ao.audio.removeEventListener('timeupdate', AudioObject.prototype.timeUpdate, false);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* mouseUp EventListener
  * getting input from all mouse clicks */
 function mouseUp(e) {
@@ -312,11 +468,19 @@ function mouseUp(e) {
     }
     onplayhead = null;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* mousemove EventListener
  * Moves playhead as user drags */
 AudioObject.prototype.moveplayhead = function (e) {
     var ao = audioList[getAudioListIndex(onplayhead)];
     var newMargLeft = e.clientX - getPosition(ao.timeline);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
   if (newMargLeft >= 0 && newMargLeft <= ao.timelineWidth) {
         document.getElementById(onplayhead).style.marginLeft = newMargLeft + "px";
     }
@@ -327,6 +491,10 @@ AudioObject.prototype.moveplayhead = function (e) {
         playhead.style.marginLeft = ao.timelineWidth + "px";
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* timeUpdate 
  * Synchronizes playhead position with current point in audio 
  * this is the html audio element
@@ -345,24 +513,44 @@ AudioObject.prototype.timeUpdate = function () {
         playingAudio = null;
     }
 }
+<<<<<<< HEAD
 ///////////////////////////////////////////////
 // Utility Methods
 ///////////////////////////////////////////////
+=======
+
+///////////////////////////////////////////////
+// Utility Methods
+///////////////////////////////////////////////
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* changeClass 
  * overwrites element's class names */
 function changeClass(element, newClasses) {
     element.className = newClasses;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* getAudioListIndex
  * Given an element's id, find the index in audioList for the correct AudioObject */
 function getAudioListIndex(id) {
     return componentDict[id];
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* clickPercent()
  * returns click as decimal (.77) of the total timelineWidth */
 function clickPercent(e, timeline, timelineWidth) {
    return (event.clientX - getPosition(timeline)) / timelineWidth;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 // getPosition
 // Returns elements left position relative to top-left of viewport
 function getPosition(el) {
@@ -371,6 +559,10 @@ function getPosition(el) {
 ///////////////////////////////////////////////
 // GENERATE HTML FOR AUDIO ELEMENTS AND PLAYERS
 ///////////////////////////////////////////////
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* createAudioElements
  * create audio elements for each file in files */
 function createAudioElements() {
@@ -379,6 +571,10 @@ function createAudioElements() {
         $("#audio-players").append(audioString);
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 /* createAudioPlayers
  * create audio players for each file in files */
 function createAudioPlayers() {
@@ -389,6 +585,11 @@ function createAudioPlayers() {
         $("#audio-players").append(playerString);
     }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 69cb34bff6f6dacac134c6409f05cab5d0733e94
 </script>
     
     <div class="footer">
