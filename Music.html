@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>My Music</title>
-<meta charset="utf-8">
+    <title>My Music</title>
+    <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   background-color: lightblue;
 }
-img {
-	border-radius: 8px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-    width: 20%;
+h5 {
+    color: darkblue;
 }
-
 /* Style the header */
 .header {
   background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
 }
-
-.responsive {
-  max-width: 100%;
-  height: auto;
-}
-
 /* Style the top navigation bar */
 .topnav {
   overflow: hidden;
   background-color: #333;
 }
-
 /* Style the topnav links */
 .topnav a {
   float: left;
@@ -52,99 +40,59 @@ img {
   padding: 14px 85px;
   text-decoration: none;
 }
-
+.topnav .icon {
+  display: none;
+}
 /* Change color on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
-.player {
-  position: relative;
-  align-content: center;
-  width: 600px;
-  height: 70px;
-  background-color: rgba(0,0,0,0.2);
-  display: flex;
-  border-radius: 2px;
-  padding: 5 16px;
-  img {
-    margin-top: 5px;
-    width: 60px;
+.audioplayer {
+    width: 470px;
     height: 60px;
-  }
-  .info {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    width: 50%;
-    padding: 0 16px;
-    .name {
-      font-size: 15px;
-      font-weight: 700;
-    }
-    .artist {
-      font-size: 12px;
-    }
-  }
-  .btns {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-    div:nth-child(1) {
-            font-size: 30px;
-        }
-        div:nth-child(2), div:nth-child(3) {
-            font-size: 50px;
-        }
-    
-  }
-  .progress {
-    position: absolute;
-    height: 2px;
-    left: 0;
-    top: 0;
-    background-color: #00a8ff;
-  }
+    margin: 5px auto auto auto;
+    border: solid;
+    float: left;
+    position: relative;
 }
-
-.iconfont {
-    content: "\f000";
+ 
+.playbutton {
     font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-/*--adjust as necessary--*/
-    color: #000;
-    position: absolute;
-    left: 0;
-    font-size: 32px;
-    margin-top: 7px;
-    padding-left: 260px;
-    padding-right: 200px;
-    }
-
-.ui-slider-handle{
-  border-radius:50%;
-  top: -5px !important;
-  width: 11px !important;
-  height: 11px !important;
-  margin-left:-5px !important;
+    height: 60px;
+    width: 60px;
+    border: none;
+    float: left;
+    outline: none;
 }
-    
-    .icon-loop:before {
-        content: "\f01e"
-    }
-    .icon-play:before {
-        content: "\f144"
-    }
-    
-    .icon-stop:before {
-        content: "\f04c"
-    }
-    
+.play {
+    background: url("icons8-musical-80.png")
+}
+.pause {
+    background: url("iconfinder_pause_326574.png");
+}
+.play,
+.pause {
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.timeline {
+    width: 400px;
+    height: 20px;
+    margin-top: 20px;
+    float: left;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, .3);
+}
+.playhead {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: 1px;
+    background: rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
     /* Add a card effect for articles */
 .card {
   background-color: purple;
@@ -152,374 +100,302 @@ img {
   width: 600px;
   margin-left: 25%;
 }
-
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
 </style>
 </head>
+<body>
 <a id="top"></a>
 
 <div class="header">
-  <h1>Music</h1>
+  <h1>My Music</h1>
 </div>
-<div class="topnav">
- 	<a href="index.html">Home</a>
- 	<a href="MyDog.html">My Dog</a>
-  	<a href="Projects.html">Projects</a>
- 	<a href="Music.html">Music</a>
- 	<!-- <a href="#">Games</a> -->
- 	<a href="Words.html">Words</a>
+<div class="topnav" id="myTopnav">
+ <a href="index.html">Home</a>
+ <a href="MyDog.html">My Dog</a>
+ <a href="Projects.html">Projects</a>
+ <a href="Music.html">Music</a>
+ <!-- <a href="#">Games</a> -->
+ <a href="Words.html">Words</a>
+ <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+ <i class="fa fa-bars"></i>
+ </a>
 </div>
-<body>
-<div class="container">
-	<div>
-    <br>
-		<p>All of the music on this page was made by me using GarageBand!
-		I've listed the following tracks in my favorite order. All these tracks and a few more are on my soundcloud, but I believe they will sound better here because of the increased frame rate</p>
-	</div>
-  <div class="card">
-    <div class='player'>
-    <audio src="SafePassage.m4a">
-      Your browser does not support the audio element.
-    </audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Safe Passage</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="0">
-    </div>
-  </div>
-  <!-- <div class="btns">
-    <div class="iconfont icon-arrow-right">
-    </div>
-  </div> -->
-</div>
- <div class="progress">
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="TheRiver'sTwin.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">The River's Twin</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="1">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="Stargaze.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Stargaze</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="2">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="Flash.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Flash</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="3">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
 
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="Karolina'sSong.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Karolina's Song</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="4">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
 
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="StrangePassenger.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Strange Passenger</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="5">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="Redb.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Redb</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="6">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="LazyDay.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Lazy Day</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="7">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="ForgottenSummerDay.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Forgotten Summer Day</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="8">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="Bloom.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Bloom</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="9">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="OuterWorld.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Outer World</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="10">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="WindCarries.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Wind Carries</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="11">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-  </div>
-  <div class="progress">
-
-  </div>
-</div>
-<div class='card'>
-<div class='player'>
-  <audio src="Hero'sTriumphUnfinished.m4a">
-    Your browser does not support the audio element.
-</audio>
-  <img src="P4050700.JPG" alt="Majestic"/>
-  <div class='info'>
-    <div class="name">Hero's Triumph [unfinished]</div>
-    <div class="artist">Jacob Crouch</div>
-  </div>
-  <div class="btns">
-    <div class="iconfont play-pause icon-play" id="12">
-    </div>
-  </div>
-  <!--
-   <div class="btns">
-    <div class="iconfont icon-loop">
-    </div> -->
-</div>
-  <div class="progress">
-
-</div>
-</div>
 <script>
-$(
-  function(){
-  var audioOn = false;
-  var aud = $('audio')[0];
-  
-  $('.play-pause').on('click', function(){
-    aud = $('audio')[this.id];
-    var element = document.getElementById(this.id);
-  if (aud.paused) {
-    if(audioOn) {
-      aud = $('audio');
-       aud.each(function() {
-          var a = $(this).get(0);
-          a.pause();
-       });
-       //now change all stops to play
-       $('.play-pause').removeClass('icon-stop');
-       $('.play-pause').addClass('icon-play');
-      aud = $('audio')[this.id]; 
-    }
-    aud.play();
-    audioOn = true;
-    element = document.getElementById(this.id);
-    element.classList.remove('icon-play');
-    element.classList.add('icon-stop');
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
   }
-  else {
-    aud.pause(); 
-    audioOn = false;
-    element.classList.remove('icon-stop');
-    element.classList.add('icon-play');
-  }
-  
-})
-   $('.icon-loop').on('click', function(){
-    aud.load();
-})//only want to update one progress bar at a time
-  aud.ontimeupdate = function(){
-    $('.progress').css('width', aud.currentTime / aud.duration * 100 + '%')
-  }
-})
+}
 </script>
-	
-	<div class="footer">
-		<p style="text-align:center">
-  			<a href="#top">Back to Top</a>
-  		</p>
-	</div>
+<div class="container">
+    <div>
+    <br>
+        <p>All of the music on this page was made by me using GarageBand!
+        I've listed the following tracks in my favorite order. All these tracks and a few more are on my soundcloud, but I believe they will sound better here because of the increased bitrate as soundcloud lowered their bitrate from 128 kbps to 64 kbps.</p>
+    </div>
+    <div id="audio-players"></div>
+</div>
+  
+<script>
+// Event listener for DOM
+  // Event listener for DOM
+  if( document.readyState !== 'loading' ) {
+    console.log( 'document is already ready, just execute code here' );
+    myInitCode();
+} else {
+document.addEventListener("DOMContentLoaded", function() {
+    // Generate HTML for audio elements and audio players
+    createAudioElements();
+    createAudioPlayers();
+    // Populate Audio List
+    populateAudioList();
+    populateComponentDictionary();
+});
+}
+// array of audio files (stored in a folder called music)
+var files = ["SafePassage.m4a",
+            "TheRiver'sTwin.m4a",
+            "Stargaze.m4a",
+            "Redb.m4a",
+            "Flash.m4a",
+            "LazyDay.m4a",
+            "StrangePassenger.m4a",
+            "Karolina'sSong.m4a",
+            "Bloom.m4a",
+            "ForgottenSummerDay.m4a", // 0
+            "OuterWorld.m4a", // 1
+            "WindCarries.m4a", // 2
+            "Hero'sTriumphUnfinished.m4a" // 3
+            ];
+///////////////////////////////////////////////
+// Find and store audio info
+///////////////////////////////////////////////
+// array for AudioObjects
+var audioList = [];
+// components and the index for their AudioObject
+var componentDict = {};
+// store AudioObject that is currently playing
+var playingAudio = null;
+// store playhead id if one is being dragged
+var onplayhead = null;
+/* AudioObject Constructor */
+function AudioObject(audio, duration) {
+    this.audio = audio;
+    this.id = audio.id;
+    this.duration = duration;
+}
+/* bindAudioPlayer
+ * Store audioplayer components in correct AudioObject
+ * num identifes correct audioplayer
+ */
+AudioObject.prototype.bindAudioPlayer = function (num) {
+    this.audioplayer = document.getElementById("audioplayer-" + num);
+    this.playbutton = document.getElementById("playbutton-" + num);
+    this.timeline = document.getElementById("timeline-" + num);
+    this.playhead = document.getElementById("playhead-" + num);
+    this.timelineWidth = this.timeline.offsetWidth - this.playhead.offsetWidth
+}
+/* addEventListeners() */
+AudioObject.prototype.addEventListeners = function () {
+    this.audio.addEventListener("timeupdate", AudioObject.prototype.timeUpdate, false);
+    this.audio.addEventListener("durationchange", AudioObject.prototype.durationChange, false);
+    this.timeline.addEventListener("click", AudioObject.prototype.timelineClick, false);
+    this.playbutton.addEventListener("click", AudioObject.prototype.pressPlay, false);
+    // Makes playhead draggable 
+    this.playhead.addEventListener('mousedown', AudioObject.prototype.mouseDown, false);
+    window.addEventListener('mouseup', mouseUp, false);
+}
+/* populateAudioList */
+function populateAudioList() {
+    var audioElements = document.getElementsByClassName("audio");
+    for (i = 0; i < audioElements.length; i++) {
+        audioList.push(
+            new AudioObject(audioElements[i], 0)
+        );
+        audioList[i].bindAudioPlayer(i);
+        audioList[i].addEventListeners();
+    }
+}
+/* populateComponentDictionary() 
+ * {key=element id : value=index of audioList} */
+function populateComponentDictionary() {
+    for (i = 0; i < audioList.length; i++) {
+        componentDict[audioList[i].audio.id] = i;
+        componentDict[audioList[i].playbutton.id] = i;
+        componentDict[audioList[i].timeline.id] = i;
+        componentDict[audioList[i].playhead.id] = i;
+    }
+}
+///////////////////////////////////////////////
+// Update Audio Player
+///////////////////////////////////////////////
+/* durationChange
+ * set duration for AudioObject */
+AudioObject.prototype.durationChange = function () {
+    var ao = audioList[getAudioListIndex(this.id)];
+    ao.duration = this.duration;
+}
+/* pressPlay() 
+ * call play() for correct AudioObject
+ */
+AudioObject.prototype.pressPlay = function () {
+    var index = getAudioListIndex(this.id);
+    audioList[index].play();
+}
+/* play() 
+ * play or pause selected audio, if there is a song playing pause it
+ */
+AudioObject.prototype.play = function () {
+    if (this == playingAudio) {
+        playingAudio = null;
+        this.audio.pause();
+        changeClass(this.playbutton, "playbutton play");
+    }
+    // else check if playing audio exists and pause it, then start this
+    else {
+        if (playingAudio != null) {
+            playingAudio.audio.pause();
+            changeClass(playingAudio.playbutton, "playbutton play");
+        }
+        this.audio.play();
+        playingAudio = this;
+        changeClass(this.playbutton, "playbutton pause");
+    }
+}
+/* timelineClick()
+ * get timeline's AudioObject
+ */
+AudioObject.prototype.timelineClick = function (event) {
+    var ao = audioList[getAudioListIndex(this.id)];
+    ao.audio.currentTime = ao.audio.duration * clickPercent(event, ao.timeline, ao.timelineWidth);
+}
+/* mouseDown */
+AudioObject.prototype.mouseDown = function (event) {
+    onplayhead = this.id;
+    var ao = audioList[getAudioListIndex(this.id)];
+    window.addEventListener('mousemove', AudioObject.prototype.moveplayhead, true);
+    ao.audio.removeEventListener('timeupdate', AudioObject.prototype.timeUpdate, false);
+}
+/* mouseUp EventListener
+ * getting input from all mouse clicks */
+function mouseUp(e) {
+    if (onplayhead != null) {
+        var ao = audioList[getAudioListIndex(onplayhead)];
+        window.removeEventListener('mousemove', AudioObject.prototype.moveplayhead, true);
+        // change current time
+        ao.audio.currentTime = ao.audio.duration * clickPercent(e, ao.timeline, ao.timelineWidth);
+        ao.audio.addEventListener('timeupdate', AudioObject.prototype.timeUpdate, false);
+    }
+    onplayhead = null;
+}
+/* mousemove EventListener
+ * Moves playhead as user drags */
+AudioObject.prototype.moveplayhead = function (e) {
+    var ao = audioList[getAudioListIndex(onplayhead)];
+    var newMargLeft = e.clientX - getPosition(ao.timeline);
+  if (newMargLeft >= 0 && newMargLeft <= ao.timelineWidth) {
+        document.getElementById(onplayhead).style.marginLeft = newMargLeft + "px";
+    }
+    if (newMargLeft < 0) {
+        playhead.style.marginLeft = "0px";
+    }
+    if (newMargLeft > ao.timelineWidth) {
+        playhead.style.marginLeft = ao.timelineWidth + "px";
+    }
+}
+/* timeUpdate 
+ * Synchronizes playhead position with current point in audio 
+ * this is the html audio element
+ */
+AudioObject.prototype.timeUpdate = function () {
+    // audio element's AudioObject
+    var ao = audioList[getAudioListIndex(this.id)];
+    var playPercent = ao.timelineWidth * (ao.audio.currentTime / ao.duration);
+    ao.playhead.style.marginLeft = playPercent + "px";
+    // If song is over
+    if (ao.audio.currentTime == ao.duration) {
+        changeClass(ao.playbutton, "playbutton play");
+        ao.playhead.style.marginLeft = 0;
+        ao.audio.currentTime = 0;
+        ao.audio.pause();
+        playingAudio = null;
+    }
+}
+///////////////////////////////////////////////
+// Utility Methods
+///////////////////////////////////////////////
+/* changeClass 
+ * overwrites element's class names */
+function changeClass(element, newClasses) {
+    element.className = newClasses;
+}
+/* getAudioListIndex
+ * Given an element's id, find the index in audioList for the correct AudioObject */
+function getAudioListIndex(id) {
+    return componentDict[id];
+}
+/* clickPercent()
+ * returns click as decimal (.77) of the total timelineWidth */
+function clickPercent(e, timeline, timelineWidth) {
+   return (event.clientX - getPosition(timeline)) / timelineWidth;
+}
+// getPosition
+// Returns elements left position relative to top-left of viewport
+function getPosition(el) {
+    return el.getBoundingClientRect().left;
+}
+///////////////////////////////////////////////
+// GENERATE HTML FOR AUDIO ELEMENTS AND PLAYERS
+///////////////////////////////////////////////
+/* createAudioElements
+ * create audio elements for each file in files */
+function createAudioElements() {
+    for (f in files) {
+        var audioString = "<audio id=\"audio-" + f + "\" class=\"audio\" preload=\"true\"><source src=\"" + files[f] + "\"></audio>";
+        $("#audio-players").append(audioString);
+    }
+}
+/* createAudioPlayers
+ * create audio players for each file in files */
+function createAudioPlayers() {
+    for (f in files) {
+        var str = files[f];
+        var substr = str.substring(0, str.length-4);
+        var playerString = "<div class=\"card\"><h5 style=\"text-align:center\">" + substr + " by Jacob Crouch</h5><div id=\"audioplayer-" + f + "\" class=\"audioplayer\"><button id=\"playbutton-" + f + "\" class=\"play playbutton\"></button><div id=\"timeline-" + f + "\" class=\"timeline\"><div id=\"playhead-" + f + "\" class=\"playhead\"></div></div></div></div>";
+        $("#audio-players").append(playerString);
+    }
+}
+</script>
+    
+    <div class="footer">
+        <p style="text-align:center">
+            <a href="#top">Back to Top</a>
+        </p>
+    </div>
 </div>
 </body>
 </html>

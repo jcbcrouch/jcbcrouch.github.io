@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,30 +16,30 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   background-color: lightblue;
+  font-size: 100%;
 }
-
+ul {
+  font-size: .9em;
+  padding-left: 7pt;
+}
 .responsive {
   max-width: 100%;
   height: auto;
 }
-
 /* Style the header */
 .header {
   background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
 }
-
 /* Style the top navigation bar */
 .topnav {
   overflow: hidden;
   background-color: #333;
 }
-
 /* Style the topnav links */
 .topnav a {
   float: left;
@@ -50,65 +49,53 @@ body {
   padding: 14px 85px;
   text-decoration: none;
 }
-
 #chartdiv {
   min-width: 200px;
 }
-
 #mapdivider {
   min-width: 160px;
 }
-
 .active {
   background-color: #4CAF50;
   color: white;
 }
-
 .topnav .icon {
   display: none;
 }
-
 /* Change color on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 /* Create three unequal columns that floats next to each other */
 .column {
   float: left;
   padding: 10px;
 }
-
 /* Left and right column */
 .column.side {
   width: 20%;
 }
-
 /* Middle column */
 .column.middle {
   width: 60%;
 }
-
 /* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-
 .imgcolumn {
   float: left;
   width: 33.33%;
   padding: 12px;
 }
-
 .footer {
   background-color: #F1F1F1;
   text-align: center;
   padding: 10px;
 }
-
 /* Add a card effect for articles */
 .card {
   background-color: white;
@@ -122,7 +109,6 @@ body {
     display: block;
   }
 }
-
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -136,11 +122,9 @@ body {
     text-align: left;
   }
 }
-
 @media screen and (max-width:200px) {
  .column.side, .column.middle {width:100%;}
 }
-
 @media screen and (max-width:124px) {
     #facts {
         display: none;
@@ -157,10 +141,10 @@ body {
 <div class="topnav" id="myTopnav">
  <a href="index.html">Home</a>
     <a href="MyDog.html">My Dog</a>
- 	 	<a href="Projects.html">Projects</a>
- 		<a href="Music.html">Music</a>
- 		<!-- <a href="#">Games</a> -->
- 		<a href="Words.html">Words</a>
+    <a href="Projects.html">Projects</a>
+    <a href="Music.html">Music</a>
+    <!-- <a href="#">Games</a> -->
+    <a href="Words.html">Words</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -180,20 +164,21 @@ function myFunction() {
 <div class="container">
 <div class="row">
     <div class="column side">
-   	    <div class="card" id="facts">
-   	     	<h3>My Facts</h3>
+        <div class="card" id="facts">
+          <h3>My Facts</h3>
           <ul>
             <li>I grew up in East Lansing, MI</li>
             <li>I'm a twin</li>
             <li>I played the violin for 8 years</li>
+            <li>I was part of a back-2-back state champion soccer team</li>
             <li>Limited working proficiency in Spanish</li>
             <li>I can bench 290lbs</li>
             <li>I enjoy screenwriting and have written 3 feature screenplays</li>
           </ul>
-     	</div>
+      </div>
         <div class="card" id="mapdivider">
-        	<h3>All the places I've been</h3>
-          <div id="mapdiv" style="width: 150px; height: 250px; display: block; cursor: default;"></div>
+          <h3>All the places I've been</h3>
+          <div id="mapdiv" style="width: 150px; height: 270px; display: block; cursor: default;"></div>
           <script>
           var map = AmCharts.makeChart("mapdiv", {
           type: "map",
@@ -206,7 +191,7 @@ function myFunction() {
           dataProvider : {
           map : "usaHigh",
           getAreasFromMap : false,
-      		areas: 
+          areas: 
           [
             {
               "id": "US-WA",
@@ -353,33 +338,33 @@ function myFunction() {
           }
           });
           </script>
-      	</div>
+        </div>
     </div>
   
     <div class="column middle">
-   		<div class="card">
-      		<h2 style="text-align: center;" >Welcome To My Page!</h2>
+      <div class="card">
+          <h2 style="text-align: center;" >Welcome To My Page!</h2>
           <br>
-      		<div class="row">
-  				<div class="imgcolumn">
-  					<div class="fakeimg"><img src="P4050700.JPG" alt="Majestic" title="My dog, Skipper" width=200 height=200 class="responsive"></div>
-  				</div>
+          <div class="row">
+          <div class="imgcolumn">
+            <div class="fakeimg"><img src="P4050700.JPG" alt="Majestic" title="My dog, Skipper" width=200 height=200 class="responsive"></div>
+          </div>
           <div class="imgcolumn">
             <div class="fakeimg"><img src="profile_photo.png" title="Photo of Me" alt="Photo of Me" height="200" width="200" class="responsive"/></div>
           </div>
-  				<div class="imgcolumn">
-  					<div class="fakeimg"><img src="12045527_762131490576713_8971391310902833419_o.jpg" title="My brother Matt and me" alt="My brother Matt and me" height="200" width="200" class="responsive"/></div>
-  				</div>
-			</div>
+          <div class="imgcolumn">
+            <div class="fakeimg"><img src="12045527_762131490576713_8971391310902833419_o.jpg" title="My brother Matt and me" alt="My brother Matt and me" height="200" width="200" class="responsive"/></div>
+          </div>
+      </div>
           <br>
-      		<p>Hi!</p>
-      		<p>My name is Jacob Crouch. I'm currently a senior at the University of Michigan set to graduate in early May with a BSE in Computer Science(gpa of 3.32). I’m a developer at heart who has three years of experience with c++ and object oriented programming. I also have coding experience with python, java, SQL, web frameworks, javascript, git, mongoDB, Bash, and the command line. I’ve taken database systems and design, web development, and system design courses at U of M along with many other classes through which I have developed a deep understanding of coding best practices, algorithms, security, and theory. <br><br> I’m an extremely driven person. I enjoy learning new things and not giving up when the going gets tough. I’m very approachable and friendly. I get along well with others and have been in many successful team environments such as coding projects and being part of a back-to-back state champion soccer team. I’m someone who loves computer science, and my goal is to continue to learn as much as I can and hopefully get to the point where I can lead my own projects and teach others.</p>
-      	</div>	
+          <p>Hi!</p>
+          <p>My name is Jacob Crouch. I'm currently a senior at the University of Michigan set to graduate in early May with a BSE in Computer Science(gpa of 3.32). I love computer science and have three years of experience with c++ and object oriented programming. I also have coding experience with python, SQL, web frameworks, javascript, git, mongoDB, Bash, and the command line. I’ve taken database systems and design, web development, and system design courses at U of M along with many other classes through which I have developed a deep understanding of coding best practices, algorithms, security, and theory. <br><br> I’m an extremely driven person. I enjoy learning new things and not giving up when the going gets tough. I’m very approachable and friendly. I get along well with others and have been in many successful team environments such as coding projects and being part of a back-to-back state champion soccer team. I’m someone who loves computer science, and my goal is to continue to learn as much as I can and hopefully get to the point where I can lead my own projects and teach others.</p>
+        </div>  
     </div>
   
     <div class="column side">
-    	<div class="card">
-      		<h2>My Mood</h2>
+      <div class="card">
+          <h2>My Mood</h2>
           <p id="demo"></p>
           <script>
             function getDayOfWeek() {
@@ -396,7 +381,7 @@ function myFunction() {
                   document.getElementById("demo").innerHTML = "It's Wednesday! Take a break? Never!";
                   break;
                 case 4:
-                  document.getElementById("demo").innerHTML = "It's Thursday! I'm not thinking about the weekend. I'm not thinking about the weekend. I'm not thinking about the weekend.";
+                  document.getElementById("demo").innerHTML = "It's Thursday! I'm not thinking about the weekend...";
                   break;
                 case 5:
                   document.getElementById("demo").innerHTML = "It's Friday! Wow! What a great week.";
@@ -413,48 +398,45 @@ function myFunction() {
             }
             window.onload = getDayOfWeek;
         </script>
-    	</div>
-    	<div class="card" id="chartdiv">
-     		<h3>My Typical Day</h3>
-      		<div id="piechart" ></div>
-			<script src="https://www.gstatic.com/charts/loader.js"></script>
-			<script>
-			// Load google charts
-			google.charts.load('current', {'packages':['corechart']});
-			google.charts.setOnLoadCallback(drawChart);
-
-			// Draw the chart and set the chart values
-			function drawChart() {
- 			var data = google.visualization.arrayToDataTable([
-  			['Task', 'Hours per Day'],
-  			['Relax', 1],
-  			['Hobbies', 1.5],
-  			['Eat', 1],
-  			['School', 11],
-  			['Gym', 1.5],
-  			['Sleep', 8]
-			]);
-
-  			// Optional; add a title and set the width and height of the chart
-  			var options = {'width':182, 'height':200, 
-  						   'chartArea': {'left':'0','top':'0','bottom':'0','right':'0', 'width': '0%', 'height': '0%'}
-               			};
-
-  			// Display the chart inside the <div> element with id="piechart"
-  			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  			chart.draw(data, options);
-			}
-			</script>
-    	</div>
-    	<div class="card">
-      		<h3>Social Media</h3>
-      		<p><a href="https://www.facebook.com/jacob.crouch.129" target="_blank">> My facebook</a></p>
-      		<p><a href="https://www.reddit.com/user/CodeMeIfYouCan" target="_blank">> My reddit</a></p>
-      		<p><a href="https://github.com/jcbcrouch" target="_blank">> My Github</a></p>
-      		<p><a href="https://soundcloud.com/codemeifyoucan" target="_blank">> My soundcloud</a></p>
-      		<p>email me: jcbcrouch3@gmail.com</p>
-    	</div>
- 	</div>
+      </div>
+      <div class="card" id="chartdiv">
+        <h3>My Typical Day</h3>
+          <div id="piechart" ></div>
+      <script src="https://www.gstatic.com/charts/loader.js"></script>
+      <script>
+      // Load google charts
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      // Draw the chart and set the chart values
+      function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Relax', 1],
+        ['Hobbies', 1.5],
+        ['Eat', 1],
+        ['School', 11],
+        ['Gym', 1.5],
+        ['Sleep', 8]
+      ]);
+        // Optional; add a title and set the width and height of the chart
+        var options = {'width':182, 'height':200, 
+                 'chartArea': {'left':'0','top':'0','bottom':'0','right':'0', 'width': '0%', 'height': '0%'}
+                    };
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+      </script>
+      </div>
+      <div class="card">
+          <h3>Social Media</h3>
+          <p><a href="https://www.facebook.com/jacob.crouch.129" target="_blank">> My facebook</a></p>
+          <p><a href="https://www.reddit.com/user/CodeMeIfYouCan" target="_blank">> My reddit</a></p>
+          <p><a href="https://github.com/jcbcrouch" target="_blank">> My Github</a></p>
+          <p><a href="https://soundcloud.com/codemeifyoucan" target="_blank">> My soundcloud</a></p>
+          <p>email me: jcbcrouch3@gmail.com</p>
+      </div>
+  </div>
 </div>
   </div>
 </body>
