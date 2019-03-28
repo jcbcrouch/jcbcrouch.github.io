@@ -53,19 +53,25 @@ h5 {
 .audioplayer {
     width: 470px;
     height: 60px;
-    margin: 5px auto auto auto;
     border: solid;
-    float: left;
     position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
  
 .playbutton {
     font-family: FontAwesome;
-    height: 60px;
+    height: 58px;
     width: 60px;
     border: none;
     float: left;
     outline: none;
+    transition-duration: 0.4s;
+}
+
+.playbutton:hover {
+  background-color: #6495ED;
 }
 .play {
     background: url("icons8-musical-80.png")
@@ -98,10 +104,14 @@ h5 {
 }
     /* Add a card effect for articles */
 .card {
-  background-color: purple;
+  background-color: grey;
   margin-top: 20px;
   width: 600px;
-  margin-left: 25%;
+  border-style: solid;
+  border-color: black
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 @media screen and (max-width: 600px) {
@@ -163,30 +173,13 @@ function myFunction() {
         <p>All of the music on this page was made by me using GarageBand!
         I've listed the following tracks in my favorite order. All these tracks and a few more are on my soundcloud, but I believe they will sound better here because of the increased bitrate as soundcloud lowered their bitrate from 128 kbps to 64 kbps.</p>
     </div>
-    <div id="audio-players"></div>
-</div>
-</div>
-
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-<div class="container">
-    <div>
-    <br>
-        <p>All of the music on this page was made by me using GarageBand!
-        I've listed the following tracks in my favorite order. All these tracks and a few more are on my soundcloud, but I believe they will sound better here because of the increased bitrate as soundcloud lowered their bitrate from 128 kbps to 64 kbps.</p>
+        <div id="audio-players" style="text-align:center"></div>
+        <div class="footer">
+        <p style="text-align:center">
+            <a href="#top">Back to Top</a>
+        </p>
     </div>
-    <div id="audio-players"></div>
 </div>
-  
 <script>
   // Thanks to Alex Katz for multiple audio player player interface
   // Event listener for DOM
@@ -426,18 +419,13 @@ function createAudioPlayers() {
     for (f in files) {
         var str = files[f];
         var substr = str.substring(0, str.length-4);
-        var playerString = "<div class=\"card\"><h5 style=\"text-align:center\">" + substr + " by Jacob Crouch</h5><div id=\"audioplayer-" + f + "\" class=\"audioplayer\"><button id=\"playbutton-" + f + "\" class=\"play playbutton\"></button><div id=\"timeline-" + f + "\" class=\"timeline\"><div id=\"playhead-" + f + "\" class=\"playhead\"></div></div></div></div>";
+        var playerString = "<div class=\"card\"><h5 style=\"text-align:center\">" + substr + "</h5><div id=\"audioplayer-" + f + "\" class=\"audioplayer\"><button id=\"playbutton-" + f + "\" class=\"play playbutton\"></button><div id=\"timeline-" + f + "\" class=\"timeline\"><div id=\"playhead-" + f + "\" class=\"playhead\"></div></div></div></div>";
         $("#audio-players").append(playerString);
     }
 }
 
 </script>
     
-    <div class="footer">
-        <p style="text-align:center">
-            <a href="#top">Back to Top</a>
-        </p>
-    </div>
 </div>
 </body>
 </html>
