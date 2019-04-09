@@ -5,30 +5,114 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-* {
-  box-sizing: border-box;
-}
 body {
+  font-family: Arial;
   margin: 0;
   background-color: lightblue;
 }
-img {
-  border-radius: 8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-    width: 20%;
+
+* {
+  box-sizing: border-box;
 }
-/* Style the header */
+
+img {
+  vertical-align: middle;
+}
+
 .header {
   background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
 }
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 14px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 14.28571%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
 .responsive {
   max-width: 100%;
   height: auto;
@@ -55,47 +139,12 @@ img {
   background-color: #ddd;
   color: black;
 }
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-/* Left and right column */
-.column.side {
-  width: 20%;
-}
-/* Middle column */
-.column.middle {
-  width: 60%;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.imgcolumn {
-  float: left;
-  width: 33.33%;
-  padding: 12px;
-}
-/* Fake image */
-.imglogo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #aaa;
-  width: 100%;
-  padding: 10px;
+
+p.description {
   text-align: center;
 }
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 10px;
-  margin-top: 20px;
-  width: 100%;
-}
+
+
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -118,11 +167,11 @@ img {
 }
 </style>
 </head>
-<a id="top"></a>
-
-<div class="header">
+<body>
+  <div class="header">
   <h1>Skipper</h1>
 </div>
+
 <div class="topnav" id="myTopnav">
  <a href="index.html">Home</a>
  <a href="MyDog.html">My Dog</a>
@@ -135,7 +184,6 @@ img {
  </a>
 </div>
 
-
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
@@ -146,68 +194,110 @@ function myFunction() {
   }
 }
 </script>
+
+<p class="description"> Skipper is a labrador retriever mix I've had since the second grade. His name comes from the character "The Skipper" of the tv show Gilligan's Island. Enjoy the pictures!</p>
+
 <div class="container">
-  <br>
-  <p> Skipper is a labrador retriever mix who I've had since I was in second grade. Named after Skipper from the tv show Gilligan's Island, he's a very friendly dog who will eat anything and everything. I will upload more pictures soon...and change the layout, but for now enjoy the pictures!</p><small> p.s. Thanks to my sister for some of the pictures.</small>
-  <div class="row">
-        <div class="card">
-      <h2>Ready for My Closeup</h2>
-      <img src="IMG_0023.JPG" alt="Close up" title="Close up" width="200" height="200" class="responsive">
-      <h6>Guy #1 <small>#dogsofinstagram</small></h6>
-      <h6>Girl #1 <small>I &lt;3 dogs</small></h6>
-      <h6>Dog #1 <small>Cute overload!</small></h6>
-    </div>
-    <div class="card">
-      <h2>Ready Fur Action</h2>
-      <img src="P4050694.JPG" alt="Action shot" title="Action shot" width=200 height=200 class="responsive">
-      <h6>Girl #2 <small>He's on pawtrol!</small></h6>
-    </div>
-    <div class="card">
-      <h2>Best Friends</h2>
-      <img src="017.JPG" alt="Me and Skipper" title="Me and Skipper" width=200 height=200 class="responsive">
-      <h6>Girl #2 <small>The perfect couple</small></h6>
-    </div>
+    <!-- Full-width images with number text -->
+
+  <div class="mySlides">
+    <div class="numbertext">1 / 7</div>
+      <img src="P4050694.JPG" style="width:100%" alt="In the Snow">
   </div>
-  <div class="row">
-    <div class="card">
-      <h2>I love Sleeping</h2>
-      <img src="P4070710.JPG" alt="Sleeping" title="Sleeping" width=200 height=200 class="responsive">
-      <h6>Guy #2 <small>Aww</small></h6>
-    </div>
-    <div class="card">
-      <h2>Guard Dog</h2>
-      <img src="P4050700.JPG" alt="Majestic" title="Majestic" width=200 height=200 class="responsive">
-      <h6>Girl #1 <small>You're too cute to scare me</small></h6>
-    </div>
-    <div class="card">
-      <h2>Nap Time</h2>
-      <img src="115.JPG" alt="lying down" title="Lying down" width=200 height=200 class="responsive">
-      <h6>Guy #1 <small>Sleep tight buddy</small></h6>
-    </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 7</div>
+      <img src="017.JPG" style="width:100%" alt="Best Buds">
   </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 7</div>
+      <img src="P4050700.JPG" style="width:100%" alt="Guard Dog">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 7</div>
+      <img src="P4070710.JPG" style="width:100%" alt="Sleeping">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 7</div>
+      <img src="115.JPG" style="width:100%" alt="Blanket">
+  </div>
+
+    <div class="mySlides">
+    <div class="numbertext">6 / 7</div>
+      <img src="055.JPG" style="width:100%" alt="Sleeping on the Couch">
+  </div>
+
+    <div class="mySlides">
+    <div class="numbertext">7 / 7</div>
+      <img src="P6250020.JPG" style="width:100%" alt="I'm a Good Boy">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+    <!-- Thumbnail images -->
   <div class="row">
-    <div class="card">
-      <h2>My Favorite Blanket</h2>
-      <img src="055.JPG" alt="sleeping with blanket" title="Sleeping with blanket" width=200 height=200 class="responsive">
-      <h6>Girl #1 <small>He looks so comfortable</small></h6>
-      <h6>Girl #2 <small>Don't wake him!</small></h6>
+    <div class="column"> 
+      <img class="demo cursor" src="P4050694.JPG" style="width:100%" onclick="currentSlide(1)" alt="In the Snow">
     </div>
-    <div class="card">
-      <h2>I Really Love Sleeping</h2>
-      <img src="IMG_1810.jpg" alt="curled up" title="Curled up" width=200 height=200 class="responsive">
-      <h6><small>Guy #2 Aww</small></h6>
+    <div class="column">
+      <img class="demo cursor" src="017.JPG" style="width:100%" onclick="currentSlide(2)" alt="Best Buds">
     </div>
-    <div class="card">
-      <h2>I'm A Good Boy</h2>
-      <img src="P6250020.JPG" alt="Skipper" title="Look at my face" width=200 height=200 class="responsive">
-      <h6><small>Girl #2 Yes you are!</small></h6>
+    <div class="column">
+      <img class="demo cursor" src="P4050700.JPG" style="width:100%" onclick="currentSlide(3)" alt="Guard Dog">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="P4070710.JPG" style="width:100%" onclick="currentSlide(4)" alt="Sleeping">
+    </div> 
+    <div class="column">
+      <img class="demo cursor" src="115.JPG" style="width:100%" onclick="currentSlide(5)" alt="Blanket">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="055.JPG" style="width:100%" onclick="currentSlide(6)" alt="Sleeping on the Couch">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="P6250020.JPG" style="width:100%" onclick="currentSlide(7)" alt="I'm a Good Boy">
     </div>
   </div>
 </div>
-<div class="footer">
-  <p style="text-align:center">
-      <a href="#top">Back to Top</a>
-    </p>
-</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
 </body>
 </html>
