@@ -1,56 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>Home</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/usaHigh.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138162555-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-138162555-1');
-</script>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 * {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
   background-color: lightblue;
   font-size: 100%;
-}
-ul {
-  font-size: .9em;
-  padding-left: 7pt;
 }
 .responsive {
   max-width: 100%;
   height: auto;
 }
-/* Style the header */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
 .header {
   background-color: #f1f1f1;
-  padding: 20px;
+  color: #ffffff;
+  padding: 15px;
   text-align: center;
 }
-/* Style the top navigation bar */
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.imgcolumn {
+  float: left;
+  width: 33.33%;
+  padding: 12px;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+.card {
+  background-color: white;
+  padding: 10px;
+  margin-top: 20px;
+}
+/* Middle column */
+.column.middle {
+  width: 60%;
+}
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+.chart {
+  width: 100%; 
+  min-height: 450px;
+}
+.row {
+  margin:0 !important;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
 .topnav {
   overflow: hidden;
   background-color: #333;
 }
-/* Style the topnav links */
+
 .topnav a {
   float: left;
   display: block;
@@ -58,60 +111,23 @@ ul {
   text-align: center;
   padding: 14px 85px;
   text-decoration: none;
+  font-size: 17px;
 }
-#chartdiv {
-  min-width: 200px;
-}
-#mapdivider {
-  min-width: 160px;
-}
-.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.topnav .icon {
-  display: none;
-}
-/* Change color on hover */
+
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
+
+.active {
+  background-color: #4CAF50;
+  color: white;
 }
-/* Left and right column */
-.column.side {
-  width: 20%;
+
+.topnav .icon {
+  display: none;
 }
-/* Middle column */
-.column.middle {
-  width: 60%;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.imgcolumn {
-  float: left;
-  width: 33.33%;
-  padding: 12px;
-}
-.footer {
-  background-color: #F1F1F1;
-  text-align: center;
-  padding: 10px;
-}
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 10px;
-  margin-top: 20px;
-}
+
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -119,6 +135,7 @@ ul {
     display: block;
   }
 }
+
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -132,22 +149,28 @@ ul {
     text-align: left;
   }
 }
-@media screen and (max-width:200px) {
- .column.side, .column.middle {width:100%;}
-}
-@media screen and (max-width:124px) {
-    #facts {
-        display: none;
-    }
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
 }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>Who Am I?</h1>
+  <h1 style="color:black">Jacob Crouch Homepage</h1>
 </div>
-
 <div class="topnav" id="myTopnav">
  <a href="index.html">Home</a>
     <a href="MyDog.html">My Dog</a>
@@ -171,11 +194,10 @@ function myFunction() {
   }
 }
 </script>
-<div class="container">
+
 <div class="row">
-    <div class="column side">
-        <div class="card" id="facts">
-          <h3>My Facts</h3>
+  <div class="col-3 menu">
+    <h3>My Facts</h3>
           <ul>
             <li>I grew up in East Lansing, MI</li>
             <li>I'm a twin</li>
@@ -185,10 +207,10 @@ function myFunction() {
             <li>I can bench 290lbs</li>
             <li>I enjoy screenwriting and have written 3 feature screenplays</li>
           </ul>
-      </div>
-        <div class="card" id="mapdivider">
           <h3>All the places I've been</h3>
-          <div id="mapdiv" style="width: 150px; height: 270px; display: block; cursor: default;"></div>
+          <ul>
+            <li><div id="mapdiv" style="width: 150px; height: 270px; display: block; cursor: default;"></div></li>
+          </ul>
           <script>
           var map = AmCharts.makeChart("mapdiv", {
           type: "map",
@@ -288,6 +310,12 @@ function myFunction() {
               "urlTarget": "_blank"
             },
             {
+              "id": "US-WY",
+              "showAsSelected": true,
+              "url": "http://wy.gov",
+              "urlTarget": "_blank"
+            },
+            {
               "id": "US-OH",
               "showAsSelected": true,
               "url": "http://oh.gov/",
@@ -348,15 +376,11 @@ function myFunction() {
           }
           });
           </script>
-        </div>
     </div>
-  
-    <div class="column middle">
-      <div class="card">
-          <h2 style="text-align: center;" >Welcome To My Page!</h2>
-          <br>
-          <div class="row">
-          <div class="imgcolumn">
+  <div class="col-6">
+    <h1 style="text-align: center">Who Am I?</h1>
+    <div style="height:240px">
+        <div class="imgcolumn">
             <div class="fakeimg"><img src="P4050700.JPG" alt="Majestic" title="My dog, Skipper" width=200 height=200 class="responsive"></div>
           </div>
           <div class="imgcolumn">
@@ -365,17 +389,13 @@ function myFunction() {
           <div class="imgcolumn">
             <div class="fakeimg"><img src="12045527_762131490576713_8971391310902833419_o.jpg" title="My brother Matt and me" alt="My brother Matt and me" height="200" width="200" class="responsive"/></div>
           </div>
-      </div>
-          <br>
-          <p>Hi!</p>
-          <p>My name is Jacob Crouch. I'm currently a senior at the University of Michigan set to graduate in early May with a BS in Computer Science(gpa of 3.32). I love computer science and have three years of experience with c++ and object oriented programming. I also have coding experience with python, SQL, web frameworks, javascript, git, mongoDB, Bash, and the command line. I’ve taken database systems and design, web development, and system design courses at U of M along with many other classes through which I have developed a deep understanding of coding best practices, algorithms, security, and theory. <br><br> I’m an extremely driven person. I enjoy learning new things and not giving up when the going gets tough. I’m very approachable and friendly. I get along well with others and have been in many successful team environments such as coding projects and being part of a back-to-back state champion soccer team. I’m someone who loves computer science, and my goal is to continue to learn as much as I can and hopefully get to the point where I can lead my own projects and teach others.</p>
-        </div>  
-    </div>
-  
-    <div class="column side">
-      <div class="card">
-          <h2>My Mood</h2>
-          <p id="demo"></p>
+        </div>
+    <p>Hi, I'm Jacob. Currently a senior at the University of Michigan, I'm set to graduate in early May with a BS in Computer Science(gpa of 3.32). I love programming, and have three years of experience with c++ and object oriented programming. I also have coding experience with python, SQL, web frameworks, javascript, git, mongoDB, Bash, and the command line. I’ve taken database systems and design, web development, and system design courses at U of M along with many other classes through which I have developed a deep understanding of coding best practices, algorithms, security, and theory. <br><br> I’m an extremely driven person. I enjoy learning new things and not giving up when the going gets tough. I’m very approachable and friendly. I get along well with others and have been in many successful team environments such as coding projects and being part of a back-to-back state champion soccer team. I’m someone who loves computer science, and my goal is to continue to learn as much as I can and hopefully get to the point where I can lead my own projects and teach others.</p>
+  </div>
+    <div class="col-3 menu">
+      <h2>My Mood</h2>
+      <ul>
+      <li><p id="demo"></p></li>
           <script>
             function getDayOfWeek() {
               var d = new Date();
@@ -408,10 +428,15 @@ function myFunction() {
             }
             window.onload = getDayOfWeek;
         </script>
-      </div>
-      <div class="card" id="chartdiv">
         <h3>My Typical Day</h3>
-          <div id="piechart" ></div>
+         <li> <div id="piechart" ></div></li>
+       </ul>
+        <h3>Social Media</h3>
+         <a href="https://www.facebook.com/jacob.crouch.129" target="_blank"> <li> My facebook</li></a>
+          <a href="https://www.reddit.com/user/CodeMeIfYouCan" target="_blank"><li> My reddit</li></a>
+          <a href="https://github.com/jcbcrouch" target="_blank"><li> My Github</li></a>
+          <a href="https://soundcloud.com/codemeifyoucan" target="_blank"><li> My soundcloud</li></a>
+          <li>email me: jcbcrouch3@gmail.com</li>
       <script src="https://www.gstatic.com/charts/loader.js"></script>
       <script>
       // Load google charts
@@ -428,26 +453,19 @@ function myFunction() {
         ['Gym', 1.5],
         ['Sleep', 8]
       ]);
-        // Optional; add a title and set the width and height of the chart
-        var options = {'width':182, 'height':200, 
-                 'chartArea': {'left':'0','top':'0','bottom':'0','right':'0', 'width': '0%', 'height': '0%'}
-                    };
+      var options = {'title':'My Average Day', 'width':200, 'height':200, backgroundColor: '#33b5e5', 'chartArea': {'left':'0','top':'0','bottom':'0','right':'0', 'width': '0%', 'height': '0%'}};
         // Display the chart inside the <div> element with id="piechart"
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data, options);
       }
       </script>
       </div>
-      <div class="card">
-          <h3>Social Media</h3>
-          <p><a href="https://www.facebook.com/jacob.crouch.129" target="_blank">> My facebook</a></p>
-          <p><a href="https://www.reddit.com/user/CodeMeIfYouCan" target="_blank">> My reddit</a></p>
-          <p><a href="https://github.com/jcbcrouch" target="_blank">> My Github</a></p>
-          <p><a href="https://soundcloud.com/codemeifyoucan" target="_blank">> My soundcloud</a></p>
-          <p>email me: jcbcrouch3@gmail.com</p>
-      </div>
-  </div>
 </div>
-  </div>
+
+<div class="footer">
+  <h3>University of Michigan coursework</h3>
+  <p>STATS250, EECS183, EECS203, EECS280, EECS281, EECS370, EECS376, EECS388, EECS398, EECS475, EECS484, EECS485, ECON101, ECON102, MATH115, MATH116 </p>
+</div>
+
 </body>
 </html>
