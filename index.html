@@ -42,7 +42,7 @@ html {
 }
 
 .header {
-  background-color: #f1f1f1;
+  background-color: #33b5e5;
   color: #ffffff;
   padding: 15px;
   text-align: center;
@@ -107,6 +107,7 @@ html {
 [class*="col-"] {
   width: 100%;
 }
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -217,7 +218,7 @@ function myFunction() {
           </ul>
           <h3>All the places I've been</h3>
           <ul>
-            <li><div id="mapdiv" style="width: 150px; height: 270px; display: block; cursor: default;"></div></li>
+            <li><div id="mapdiv" style="max-width: 100%; height: 270px; display: block; cursor: default;"></div></li>
           </ul>
           <script>
           var map = AmCharts.makeChart("mapdiv", {
@@ -438,7 +439,7 @@ function myFunction() {
             window.onload = getDayOfWeek;
         </script>
         <h3>My Typical Day</h3>
-         <li> <div id="piechart" ></div></li>
+         <li> <div id="piechart"></div></li>
        </ul>
         <h3>Social Media</h3>
          <a href="https://www.facebook.com/jacob.crouch.129" target="_blank"> <li> My facebook</li></a>
