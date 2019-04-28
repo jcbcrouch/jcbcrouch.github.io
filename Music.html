@@ -209,20 +209,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 }
 
-// array of audio files (stored in a folder called music)
+// array of audio files
 var files = ["SafePassage.m4a",
             "TheRiver'sTwin.m4a",
-            "LazyDay.m4a",
             "OuterWorld.m4a",
             "StrangePassenger.m4a",
             "Redb.m4a",
-            "Stargaze.m4a",
+            "WindCarries.m4a",
+            "LazyDay.m4a",
             "Karolina'sSong.m4a",
+            "Stargaze.m4a",
             "Flash.m4a",
             "Bloom.m4a",
             "EveningofDreams.m4a",
             "ForgottenSummerDay.m4a",
-            "WindCarries.m4a",
             "Hero'sTriumphUnfinished.m4a"
             ];
 
@@ -371,7 +371,7 @@ AudioObject.prototype.moveplayhead = function (e) {
 
 /* timeUpdate 
  * Synchronizes playhead position with current point in audio 
- * this is the html audio element
+ * this is the html audio element. Added autoplay.
  */
 AudioObject.prototype.timeUpdate = function () {
     // audio element's AudioObject
@@ -385,6 +385,13 @@ AudioObject.prototype.timeUpdate = function () {
         ao.audio.currentTime = 0;
         ao.audio.pause();
         playingAudio = null;
+        var index = getAudioListIndex(this.id);
+        if (index < files.length - 1) {
+          audioList[index + 1].play();
+        }
+        else {
+          audioList[0].play();
+        }
     }
 }
 
