@@ -130,7 +130,6 @@ img {
  <a href="MyDog.html">My Dog</a>
  <a href="Projects.html">Projects</a>
  <a href="Music.html">Music</a>
- <!-- <a href="#">Games</a> -->
  <a href="Words.html">Words</a>
  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
  <i class="fa fa-bars"></i>
@@ -218,7 +217,7 @@ function myFunction() {
   <p>Description: A seam carving alogirthm. Seam carving is a technique for content-aware resizing of images (sometimes known as "retargeting"). The end result is that we can resize images in a way that changes the aspect ratio but does not distort the image. The algorithm works by finding and removing "seams" in the image that pass through the least important pixels. My program only implements shrinking the dimensions of an image. For more info on seam carving, watch <a href="https://www.youtube.com/watch?v=6NcIJXTlugc">this</a> youtube video. Or read up on it <a href=" http://dl.acm.org/citation.cfm?id=1276390">here</a>.</p>
   <br>
   <h2>TSP Zookeeper (C++)</h2>
-  <p>Description: As a zookeeper in a zoo with a bunch of animals, it your job to provide food and water for them everyday. In order to minimize the expenses of the zoo, it's necessary to devise a systematic way to feed the animals. The plan is to first make paths to each animal cage to deliver food, and then to construct canals to provide fresh water to all animal cages. My program identifies the most efficient routes for providing​​ food​​ and​​ water​​ to​​ the​​ animals. It has two modes. The first, is a simple MST to make paths to the cages to feed the animals minimizing the expenses of building paths by finding the most efficient routes. The second mode, is a more true <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">TSP</a> problem where I find the most cost efficient routes for constructing water canals to the cages. In order to have water flow within the canals, the​​ route​​ should​​ be​​ a ​​cycle. This program calculates the MST cost for 40,000 cages and TSP cost for 40 cages.</p>
+  <p>Description: As the developer of a zoo with a bunch of animals, it is your job to design an optimal layout that will optimize the cost of feeding them everyday. In order to minimize the expenses of each animal cage, you must connect each cage by a path which can be used to deliver food. Separately, canals provide fresh water to all animal cages. Shorter paths cost less money. My program identifies these optimal paths. There are two modes. The first, is a simple MST to make only paths between cages to feed the animals. The second, is a more true <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">TSP</a> problem where my program finds the most cost efficient routes for constructing water canals to the cages. In order to have water flow within the canals, the​​ route​​ must be​​ a ​​cycle. This program efficiently calculates the MST cost for 40,000 cages and exact TSP cost for 40 cages.</p>
   <h5>Details</h5>
   <p> Implemented an MST using <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim's</a> algorithm instead of <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's</a> because the graph was sparse and contained many more edges than vertices making its Big O faster. Learned about branch and bound method, applying heuristics, and graphs.</p>
   <br> 
