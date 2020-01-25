@@ -177,6 +177,10 @@ html {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
+
+h4 {
+    display: inline;
+}
 </style>
 </head>
 <body>
@@ -237,6 +241,12 @@ function myFunction() {
           getAreasFromMap : false,
           areas: 
           [
+            {
+              "id": "US-OR",
+              "showAsSelected": true,
+              "url": "http://oregon.gov",
+              "urlTarget": "_blank"
+            },
             {
               "id": "US-WA",
               "showAsSelected": true,
@@ -402,9 +412,12 @@ function myFunction() {
             <div class="fakeimg"><img src="12045527_762131490576713_8971391310902833419_o.jpg" title="My brother Matt and me" alt="My brother Matt and me" height="200" width="200" class="responsive"/></div>
           </div>
         </div>
-    <p>Hi, I'm Jacob Crouch. I'm a 2019 graduate of the University of Michigan with a BS in computer science, and will be beginning my career as a software development engineer for Amazon in July. I have coding experience with C/C++, Python, SQL, web frameworks like React, Javascript, Git, mongoDB, Bash, sqlite and the command line. I’ve taken database systems and design, web development, and system design courses at U of M along with many other classes through which I have developed a deep understanding of coding best practices, algorithms, security, and theory.</p>
-    <p> I’m an extremely driven person. I enjoy learning new things and am happiest when I am being challenged or being creative. I have been in many successful team environments such as university group projects and being part of a back-to-back state champion soccer team. I’m someone who loves the space of computer science, and my goal is to continue to learn as much as I can and hopefully get to the point where I can lead my own teams and teach others.</p>
-    <p>Please do take a look around my site. Other than my coding projects, I have a whole page dedicated to my music that I enjoy creating in my free time you can listen to. I will continuously be adding to this site over time, updating information, adding new pictures and music, and perhaps adding more pages. Anyways, thanks for visiting! I hope you know a little bit more about me.</p>
+    <h4>My Work</h4>
+    <p>After graduating from the University of Michigan in May 2019 with a BS in computer science, I took a role as an SDE I at Amazon Web Services. I'm currently based in Portland, Oregon, and am enjoying the beautiful nature of the Pacific Northwest. In my current role on the GlobalAccelerator team, I play a part in all of our customer facing APIs. After starting at Amazon, I was given the opportunity to lead our service's integration with resource tagging, a feature shared across service teams that brings direct value to customers. In fact, almost all of the work I do is with the purpose of creating customer value. Whether that's being a part of making CloudWatch metrics available, providing fine grained resource management with tagging, being in on customer calls, or developing valuable tests that have caught bugs helping to keep customer trust.</p>
+    <h4>My Goals</h4>
+    <p> I’m an extremely driven person, I enjoy learning new things, and am happiest when I am being challenged or being creative. I have been in many successful team environments that have produced successful feature launches, hit volunteering goals, and was even part of a back-to-back state champion soccer team back in high school. I’m someone who loves the space of computer science, and my goal is to continue to learn as much as I can and hopefully get to the point where I lead my own teams. My next big goal is to make SDEII.</p>
+    <h4>My Hobbies</h4>
+    <p>Please do take a look around my site. Other than my coding projects, I have a whole page dedicated to my music that I enjoy creating in my free time you can listen to. In addition to music, I also enjoy screenwriting. Anyways, thanks for visiting! I hope you know a little bit more about me.</p>
   </div>
     <div class="col-3 menu">
       <h2>My Mood</h2>
@@ -422,7 +435,7 @@ function myFunction() {
                   document.getElementById("demo").innerHTML = "It's Tuesday! Let's keep the ball rolling.";
                   break;
                 case 3:
-                  document.getElementById("demo").innerHTML = "It's Wednesday! Take a break? Never!";
+                  document.getElementById("demo").innerHTML = "It's Wednesday! Let's hope this week finishes like it started!";
                   break;
                 case 4:
                   document.getElementById("demo").innerHTML = "It's Thursday! I'm not thinking about the weekend...";
@@ -463,7 +476,7 @@ function myFunction() {
         ['Relax', 1],
         ['Hobbies', 1.5],
         ['Eat', 1],
-        ['School', 11],
+        ['Work', 11],
         ['Gym', 1.5],
         ['Sleep', 8]
       ]);
