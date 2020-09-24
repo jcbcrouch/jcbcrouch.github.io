@@ -127,7 +127,6 @@ img {
 </div>
 <div class="topnav" id="myTopnav">
  <a href="index.html">Home</a>
- <a href="MyDog.html">My Dog</a>
  <a href="Projects.html">Projects</a>
  <a href="Music.html">Music</a>
  <a href="Words.html">Words</a>
@@ -149,75 +148,75 @@ function myFunction() {
 
 <div class="container">
   <h2>Search Engine (C++)</h2>
-  <p>Description: Me and a team of five other University of Michigan students built a search engine from the ground up! This was a class project from 398 System Design of a Search Engine taught by <a href="https://nicolehamilton.com/">Nicole Hamilton</a> who worked on the creation of Microsoft's Bing.</p>
+  <p>Me and a team of five other University of Michigan students built a search engine from the ground up! This was a class project from 398 System Design of a Search Engine taught by <a href="https://nicolehamilton.com/">Nicole Hamilton</a> who worked on the creation of Microsoft's Bing.</p>
   <h5>Details</h5>
   <p>There are seven parts to a search engine. Crawler, HTML parser, Inverted index, Ranker, Query Compiler, Constraint Solver and Front end. My contribution to this project was implementing an ad-hoc HTML and url parser along with a query compiler and custom templated vector class. For the html parser, I took a simple yet elegant approach to extract terms from the documents and label them by title, anchor, and body text. My parser broke the document down by parts and put everything into an object to be stored in the inverted index. The basic idea was to have a class file pointer that began at the beginning of the file and traverse through it looking for opening tags. I entirely skipped <i>style</i> and <i>script</i> tags while seeking out <i>a</i> and <i>title</i> tags. I then treated the contents of any other tag as body text. This allowed my parser to be fast and not get tripped up by malformed HTML. What was unique about my parser was that it could label anchor text and assign the text to its corresponding link. This involved some extra work to account for anchor text in nested tags, links with no closing tags in parent tags and other HTML style differences, which made extracting anchor text only slightly complicated. For the URL parser, I split words on [-, /, .] characters, and ignored phrases that contained numbers, more than four consonants in a row or had no vowels. I then used an index sort and binary search to give each document a rank based on whether I could find the domain in a list of top domains. This rank was to be used in addition to other ranking heuristics. For the query compiler, I used a simple top-down recursive method to interpret different queries based on a common search engine grammar and create an ISR parse tree that could be interpreted by the constraint solver. My compiler preprocessed queries by lowering them, removing reserved characters, sanitizing the input and removing extra whitespace. As for libraries, my templated vector class was dynamic with resize and reserve functionality.</p>
   <br>
   <h2>Wikipedia Search Engine (Javascript, HTML, Python, Flask)</h2>
-  <p>Description: An end-to-end scalable search engine that can take simple AND, non-phrase queries. Similar to a commercial search engine and includes PageRank, tf-idf, and uses parallel data processing with MapReduce.</p>
+  <p>An end-to-end scalable search engine that can take simple AND, non-phrase queries. Similar to a commercial search engine and includes PageRank, tf-idf, and uses parallel data processing with MapReduce.</p>
   <h5>Details</h5>
   <p>Used Hadoop’s command line streaming interface to write the indexer in python3, which was a mapReduce pipeline that created an inverted index for Wikipedia. The inverted index looked like the following, word -> idf -> doc_id -> number of occurrences in doc_id -> doc_id's normalization factor (before sqrt). To interact with the index, I implemented two interfaces/servers(index and search). The inverted index interface is a separate service from the search interface, and is a RESTful API that handles search queries and returns a list of relevant results in JSON format that the search server processes to display results to the user. The search interface is a React driven interface that provides a GUI for the user to enter a query and specify a Pagerank weight, and will then send a request to the index server. When it receives the search results from the index server, it displays the top 10 results on the webpage. It also has an option to view similar documents for each document returned. The use of two separate servers for index and search is important for scalability.</p>
   <br>
   <h2>Instagram Web App (Javascript, HTML, Python, Flask)</h2>
-  <p>Description: An Instagram clone implemented with client-side dynamic pages deployed using AWS. Built using client-side dynamic pages and a REST API with a client application written in JavaScript that runs in the browser and makes AJAX calls to the REST API.</p>
+  <p>An Instagram clone implemented with client-side dynamic pages deployed using AWS. Built using client-side dynamic pages and a REST API with a client application written in JavaScript that runs in the browser and makes AJAX calls to the REST API.</p>
   <h5>Details</h5>
   <p>Implemented user sessions with cookies and secure passwords with hashing + salting. I built the backend and database querying with python/Flask, and built the frontend with React/Javascript that includes pagination, infinite scrolling and rendering.</p>
   <br>
   <h2>Creative AI (Python2.7)</h2>
-  <p>Description: A program to computer-generate realistic song lyrics and musical scores. This program uses machine learning techniques from natural language processing, which is at the intersection of computers and human language, to generate new songs and music based on patterns found in existing songs and music. The music databases used were the Beatles catalog and Nintendo music.
+  <p>A program to computer-generate realistic song lyrics and musical scores. This program uses machine learning techniques from natural language processing, which is at the intersection of computers and human language, to generate new songs and music based on patterns found in existing songs and music. The music databases used were the Beatles catalog and Nintendo music.
  </p>
  <h5>Details</h5>
  <p>Me and a team of three other University of Michigan students worked on this program. It involved the use of different python libraries, and was the first project I completed in python. This project taught me how to use python and basic NLP techniques. I enjoyed this project because it combined coding with music.</p>
  <br>
 <h2>Python MapReduce Server (Python3)</h2>
-  <p>Description: A single machine, multi-process, multi-threaded server that executes user-submitted MapReduce jobs.</p>
+  <p>A single machine, multi-process, multi-threaded server that executes user-submitted MapReduce jobs.</p>
   <h5>Details</h5>
  <p>Implemented a Master and Worker class to efficiently perform MapReduce tasks. Spawned each new worker as its own process with a thread connected to the master to send UDP heartbeat messages. All other communication done between the master and workers was done over TCP. The master assigns tasks to workers based on their state: 'Ready', 'Busy' or 'Dead'. This server is fault tolerant because the main master thread reassigns tasks from workers that miss 5 heartbeat pings. It also shuts down safely by killing all worker processes before the master process is killed.</p>
   <br>
 
 <h2>Pipelined LC-2K Simulator (C)</h2>
-  <p>Description: A cycle-accurate behavioral simulator for a pipelined implementation of the LC-2K, complete with data forwarding, simple branch prediction and caching.</p>
+  <p>A cycle-accurate behavioral simulator for a pipelined implementation of the LC-2K, complete with data forwarding, simple branch prediction and caching.</p>
   <h5>Details</h5>
 <p>This simulator takes in an assembly-language program and translates it into machine language. It then simulates any legal LC-2K machine-code program. This project explored how human readable code is translated into machine readable bits along with the different stages of program execution. This project taught me about assemblers, simulators, memory registers, bit masking, pipelining and LRU caching. </p>
 <br>
   <h2>Virtual Stock Exchange (C++)</h2>
-  <p>Description: A program​ market that receives a series of “​orders​,” or intentions to buy or sell shares of a certain stock and checks if the new order can be matched with any previous orders. There are different ouptut modes. <strong>Median:</strong> prints the current median​ match price for all stocks in ascending order by stockID.  <strong>Trader Info:</strong> prints Trader​ __TRADER_ID__ bought​ __NUMBER_BOUGHT__ and sold __NUMBER_SOLD for a net transfer of ​​$​__NET_VALUE_TRADED__.<strong>Time Traveler:</strong> prints the ideal time that a time traveler theoretically could have bought shares​​ of​​ a ​​stock ​​and​​ then​​ later​​ sold​​ that​​ stock​​ to​​ maximize​​ profit.</p>
+  <p>A program​ market that receives a series of “​orders​,” or intentions to buy or sell shares of a certain stock and checks if the new order can be matched with any previous orders. There are different ouptut modes. <strong>Median:</strong> prints the current median​ match price for all stocks in ascending order by stockID.  <strong>Trader Info:</strong> prints Trader​ __TRADER_ID__ bought​ __NUMBER_BOUGHT__ and sold __NUMBER_SOLD for a net transfer of ​​$​__NET_VALUE_TRADED__.<strong>Time Traveler:</strong> prints the ideal time that a time traveler theoretically could have bought shares​​ of​​ a ​​stock ​​and​​ then​​ later​​ sold​​ that​​ stock​​ to​​ maximize​​ profit.</p>
   <h5>Details</h5>
   <p>This project required the use of priority queues and really tested my debugging skills.</p>
 <br>
 <h2>Euchre (C++)</h2>
-  <p>Description: A four player <a href="https://en.wikipedia.org/wiki/Euchre">Euchre</a> simulator.</p>
+  <p>A four player <a href="https://en.wikipedia.org/wiki/Euchre">Euchre</a> simulator.</p>
   <h5>Details</h5>
   <p> I gained experience with abstract data types, object-oriented programming, and polymorphism.</p>
   <br>
 <h2>Machine Learning Classifier (C++)</h2>
-  <p>Description: A program that uses natural language processing and machine learning techniques to automatically identify the subject of posts from the EECS 280 <a href="https://en.wikipedia.org/wiki/Piazza_(web_service)">piazza</a>.</p>
+  <p>A program that uses natural language processing and machine learning techniques to automatically identify the subject of posts from the EECS 280 <a href="https://en.wikipedia.org/wiki/Piazza_(web_service)">piazza</a>.</p>
   <br>
   <h2>Log Manager (C++)</h2>
-  <p>Description: In professional software, rather than outputting messages to the   standard output stream (stdout via cout) for the purpose of debugging or indicating errors, developers will typically use log files to hide such information from end-users. These log files have the advantage of being archivable for later examination should an anomaly occur in the software system. Log files are usually quite massive in size and there are often many log entries that may be irrelevant to what the developer is trying to examine. The developer needs to have the ability to quickly search for and analyze only the entries they care about. My program helps with this task by being an interactive interface where the user can perform timestamp, category, and keyword searches for the purpose of constructing an "excerpt list" of the log file. My program also allows the user to manage and display this "excerpt list" to identify the important/relevant entries of their log file.</p>
+  <p>In professional software, rather than outputting messages to the   standard output stream (stdout via cout) for the purpose of debugging or indicating errors, developers will typically use log files to hide such information from end-users. These log files have the advantage of being archivable for later examination should an anomaly occur in the software system. Log files are usually quite massive in size and there are often many log entries that may be irrelevant to what the developer is trying to examine. The developer needs to have the ability to quickly search for and analyze only the entries they care about. My program helps with this task by being an interactive interface where the user can perform timestamp, category, and keyword searches for the purpose of constructing an "excerpt list" of the log file. My program also allows the user to manage and display this "excerpt list" to identify the important/relevant entries of their log file.</p>
   <h5>Details</h5>
   <p> I gained experience writing code that makes use of multiple interacting data structures. I also used perf to identify bottlenecks and increase speed.</p>
   <br> 
   <h2>HTTP Server (C++)</h2>
-  <p>Description: A http server that creates a thread per request connecting to clients through sockets. Parses client requests and serves requested files to client.</p>
+  <p>A http server that creates a thread per request connecting to clients through sockets. Parses client requests and serves requested files to client.</p>
   <br>
   <h2>ROP Chain Buffer Overflow (Python)</h2>
-  <p>Description: A buffer overflow exploiter that chains <a href="https://en.wikipedia.org/wiki/Return-oriented_programming">ROP gadgets</a> together in order to load and execute attacker's own shell script.</p>
+  <p>A buffer overflow exploiter that chains <a href="https://en.wikipedia.org/wiki/Return-oriented_programming">ROP gadgets</a> together in order to load and execute attacker's own shell script.</p>
   <br>
   <h2>Port Scanning Detector (Python)</h2>
-  <p>Description: A program that can detect <a href="https://en.wikipedia.org/wiki/Port_scanner">port scanning</a>.</p>
+  <p>A program that can detect <a href="https://en.wikipedia.org/wiki/Port_scanner">port scanning</a>.</p>
   <br>
   <h2>Elliptic Curve Encryptor/Decryptor (C++)</h2>
-  <p>Description: A program that can perform <a href="https://en.wikipedia.org/wiki/Elliptic-curve_cryptography">elliptic curve cryptography</a></p>
+  <p>A program that can perform <a href="https://en.wikipedia.org/wiki/Elliptic-curve_cryptography">elliptic curve cryptography</a></p>
   <br>
   <h2>SQL Injection Program (C++)</h2>
-  <p>Description: A program that can perform <a href="https://en.wikipedia.org/wiki/SQL_injection">sql injection</a> and bypass user logins on websites that don't properly sanitize user input and use <a href="https://en.wikipedia.org/wiki/MD5">MD5 hash</a>.</p>
+  <p>A program that can perform <a href="https://en.wikipedia.org/wiki/SQL_injection">sql injection</a> and bypass user logins on websites that don't properly sanitize user input and use <a href="https://en.wikipedia.org/wiki/MD5">MD5 hash</a>.</p>
   <br>
   <h2>Image Processing (C++)</h2>
-  <p>Description: A seam carving alogirthm. Seam carving is a technique for content-aware resizing of images (sometimes known as "retargeting"). The end result is that we can resize images in a way that changes the aspect ratio but does not distort the image. The algorithm works by finding and removing "seams" in the image that pass through the least important pixels. My program only implements shrinking the dimensions of an image. For more info on seam carving, watch <a href="https://www.youtube.com/watch?v=6NcIJXTlugc">this</a> youtube video. Or read up on it <a href=" http://dl.acm.org/citation.cfm?id=1276390">here</a>.</p>
+  <p>A seam carving alogirthm. Seam carving is a technique for content-aware resizing of images (sometimes known as "retargeting"). The end result is that we can resize images in a way that changes the aspect ratio but does not distort the image. The algorithm works by finding and removing "seams" in the image that pass through the least important pixels. My program only implements shrinking the dimensions of an image. For more info on seam carving, watch <a href="https://www.youtube.com/watch?v=6NcIJXTlugc">this</a> youtube video. Or read up on it <a href=" http://dl.acm.org/citation.cfm?id=1276390">here</a>.</p>
   <br>
   <h2>TSP Zookeeper (C++)</h2>
-  <p>Description: As the developer of a zoo with a bunch of animals, it is your job to design an optimal layout that will optimize the cost of feeding them everyday. In order to minimize the expenses of each animal cage, you must connect each cage by a path which can be used to deliver food. Separately, canals provide fresh water to all animal cages. Shorter paths cost less money. My program identifies these optimal paths. There are two modes. The first, is a simple MST to make only paths between cages to feed the animals. The second, is a more true <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">TSP</a> problem where my program finds the most cost efficient routes for constructing water canals to the cages. In order to have water flow within the canals, the​​ route​​ must be​​ a ​​cycle. This program efficiently calculates the MST cost for 40,000 cages and exact TSP cost for 40 cages.</p>
+  <p>As the developer of a zoo with a bunch of animals, it is your job to design an optimal layout that will optimize the cost of feeding them everyday. In order to minimize the expenses of each animal cage, you must connect each cage by a path which can be used to deliver food. Separately, canals provide fresh water to all animal cages. Shorter paths cost less money. My program identifies these optimal paths. There are two modes. The first, is a simple MST to make only paths between cages to feed the animals. The second, is a more true <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">TSP</a> problem where my program finds the most cost efficient routes for constructing water canals to the cages. In order to have water flow within the canals, the​​ route​​ must be​​ a ​​cycle. This program efficiently calculates the MST cost for 40,000 cages and exact TSP cost for 40 cages.</p>
   <h5>Details</h5>
   <p> Implemented an MST using <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim's</a> algorithm instead of <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's</a> because the graph was sparse and contained many more edges than vertices making its Big O faster. Learned about branch and bound method, applying heuristics, and graphs.</p>
   <br> 

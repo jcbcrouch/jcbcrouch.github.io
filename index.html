@@ -190,7 +190,6 @@ h4 {
 </div>
 <div class="topnav" id="myTopnav">
  <a href="index.html">Home</a>
-    <a href="MyDog.html">My Dog</a>
     <a href="Projects.html">Projects</a>
     <a href="Music.html">Music</a>
     <a href="Words.html">Words</a>
@@ -213,7 +212,7 @@ function myFunction() {
 
 <div class="row">
   <div class="col-3 menu">
-    <h3>My Facts</h3>
+    <h2>Facts</h2>
           <ul>
             <li>I grew up in East Lansing, MI</li>
             <li>I'm a twin</li>
@@ -224,7 +223,7 @@ function myFunction() {
             <li>I enjoy composing music, especially for strings</li>
             <li>I enjoy screenwriting and have written 3 feature screenplays</li>
           </ul>
-          <h3>All the places I've been</h3>
+          <h2>All the places I've been</h2>
           <ul>
             <li><div id="mapdiv" style="max-width: 100%; height: 270px; display: block; cursor: default;"></div></li>
           </ul>
@@ -401,28 +400,21 @@ function myFunction() {
           </script>
     </div>
   <div class="col-6">
-    <h1 style="text-align: center">Who Am I?</h1>
-    <div style="height:240px">
-        <div class="imgcolumn">
-            <div class="fakeimg"><img src="P4050700.JPG" alt="Majestic" title="My dog, Skipper" width=200 height=200 class="responsive"></div>
-          </div>
-          <div class="imgcolumn">
-            <div class="fakeimg"><img src="myface.jpeg" title="Photo of Me" alt="Photo of Me" height="150" width="200" class="responsive"/></div>
-          </div>
-          <div class="imgcolumn">
-            <div class="fakeimg"><img src="12045527_762131490576713_8971391310902833419_o.jpg" title="My brother Matt and me" alt="My brother Matt and me" height="200" width="200" class="responsive"/></div>
-          </div>
-        </div>
     
-    <h4>My Work</h4>
-    <p>After graduating from the University of Michigan in May 2019 with a BS in computer science, I took a role as an SDE I at Amazon Web Services. I'm currently based in Portland, Oregon, and am enjoying the beautiful nature of the Pacific Northwest. In my current role on the GlobalAccelerator team, I play a part in all of our customer facing APIs. While at Amazon, I have learned how to design, implement, and ship features to customers. I've also learned the value of innovating, taking calculated risks, and teamwork. I work on an amazing team, and it's been awesome to see the business grow in the time I've been here. Check out GlobalAccelerator <a href="https://aws.amazon.com/global-accelerator/">here</a>.</p>
-    <h4>My Goals</h4>
-    <p>I’m an extremely driven person, I enjoy learning new things, and am happiest when I am being challenged or being creative. I love the space of computer science, and my goal is to continue to learn as much as I can. Non-Software related goals include getting a live orchestra to play one of my string pieces and benching 315lbs.</p>
-    <h4>My Hobbies</h4>
-    <p>Please do take a look around my site. Other than my coding projects, I have a whole page dedicated to my music that I enjoy creating in my free time you can listen to. In addition to music, I also enjoy screenwriting and powerlifting. For side projects, I'm currently working on a meal planning application, which I'm very excited about. I can envision it having a positive impact on the way I (and possibly others) consume food. Thanks for visiting!</p>
+	<h2>Work</h2>
+    <p>After graduating from the University of Michigan in May 2019 with a BS in computer science, I took a role as an SDE I at Amazon Web Services. I'm currently based in Portland, Oregon, and am enjoying the beautiful nature of the Pacific Northwest. In my current role on the GlobalAccelerator team, I play a part in all of our customer facing APIs. While at Amazon, I have learned how to design, implement, and ship features to customers. I've also learned the value of innovating, taking calculated risks, and teamwork. I work on an amazing team, and it's been awesome to see the business grow in the time I've been here. Check out GlobalAccelerator <a href="https://aws.amazon.com/global-accelerator/">here</a>.
+	</p>
+
+	<br>
+	<br>
+
+	
+	<h2>Hobbies</h2>
+    <p>Please do take a look around my site. Other than my coding projects, I have a whole page dedicated to my music that I enjoy creating in my free time you can listen to. In addition to music, I also enjoy screenwriting and powerlifting. Future goals of mine are getting a live orchestra to play one of my pieces and benching 315lbs. As for side projects, I'm currently working on a meal planning app. I'm very excited about this project because nutrition and health are major problems that we are currently facing today. My goal with the app is to make eating healthier easier.
+	</p>
   </div>
     <div class="col-3 menu">
-      <h2>My Mood</h2>
+      <h2>Mood</h2>
       <ul>
       <li><p id="demo"></p></li>
           <script>
@@ -457,11 +449,10 @@ function myFunction() {
             }
             window.onload = getDayOfWeek;
         </script>
-        <h3>My Typical Day</h3>
+        <h2>Typical Day</h2>
          <li> <div id="piechart"></div></li>
        </ul>
-        <h3>Social Media</h3>
-         <a href="https://www.facebook.com/jacob.crouch.129" target="_blank"> <li> My facebook</li></a>
+        <h2>Social Media</h2>
           <a href="https://www.reddit.com/user/CodeMeIfYouCan" target="_blank"><li> My reddit</li></a>
           <a href="https://github.com/jcbcrouch" target="_blank"><li> My Github</li></a>
           <a href="https://www.linkedin.com/in/jacob-crouch-650136186/" target="_blank"><li> My LinkedIn</li></a>
@@ -476,11 +467,11 @@ function myFunction() {
       var data = google.visualization.arrayToDataTable([
         ['Task', 'Hours per Day'],
         ['Relax', 1],
-        ['Hobbies', 1.5],
+        ['Hobbies', 2.5],
         ['Eat', 1],
-        ['Work', 11],
+        ['Work', 9],
         ['Gym', 1.5],
-        ['Sleep', 8]
+        ['Sleep', 9]
       ]);
       var options = {'title':'My Average Day', 'width':200, 'height':200, backgroundColor: '#33b5e5', 'chartArea': {'left':'0','top':'0','bottom':'0','right':'0', 'width': '0%', 'height': '0%'}};
         // Display the chart inside the <div> element with id="piechart"
